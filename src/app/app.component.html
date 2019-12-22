@@ -1,0 +1,9 @@
+<input type="text" class="form-control" #text_input id="text_input">
+<label for="text_input">Enter vk user id</label>
+<h2>Users VK</h2>
+<ul>
+  <li *ngFor="let user of users">
+    <p><i>{{ user.id }}</i><b>{{ user.first_name + user.last_name }}</b></p>
+    <img [src]="user.photo_big" alt="user.id">
+  </li>
+</ul>
