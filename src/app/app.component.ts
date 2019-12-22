@@ -34,7 +34,7 @@ export class AppComponent implements OnInit {
         // защита от частоты запросов, чтобы вк не забанил
         debounceTime(2000),
         // создаем новый стрим из выполненого метода
-        mergeMap(value => this.appS.getUserById(value)),
+        mergeMap((value: string) => this.appS.getUserById(value)),
         catchError(error => of(error)),
         // мутируем response в удобным нам формат
         map(res => res.response)
